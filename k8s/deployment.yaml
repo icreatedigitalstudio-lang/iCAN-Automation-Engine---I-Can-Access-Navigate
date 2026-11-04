@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: icreate-automation-engine, labels: {app: icreate-automation-engine}}
+spec:
+  replicas: 3
+  selector: {matchLabels: {app: icreate-automation-engine}}
+  template:
+    metadata: {labels: {app: icreate-automation-engine}}
+    spec:
+      containers:
+      - name: api
+        image: icreate-automation-engine:2.0.0
+        ports: [{containerPort: 8000}, {containerPort: 8765}, {containerPort: 9001}]
+        envFrom: [{secretRef: {name: icreate-automation-engine-secrets}}]
+        livenessProbe: {httpGet: {path: /health/live, port: 8000}, initialDelaySeconds: 15, periodSeconds: 20}
+        readinessProbe: {httpGet: {path: /health/ready, port: 8000}, initialDelaySeconds: 5, periodSeconds: 10}
+        resources: {requests: {cpu: "500m", memory: "512Mi"}, limits: {cpu: "1000m", memory: "1Gi"}}
+        securityContext: {runAsNonRoot: true, runAsUser: 1000, readOnlyRootFilesystem: true}

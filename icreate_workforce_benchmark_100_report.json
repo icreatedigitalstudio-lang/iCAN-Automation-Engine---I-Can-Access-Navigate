@@ -1,0 +1,314 @@
+{
+  "total_jobs": 20,
+  "total_expected_tasks": 68,
+  "total_completed_tasks": 68,
+  "completion_rate": 1.0,
+  "overall_accuracy": 0.9499999999999996,
+  "evidence_verified_rate": 1.0,
+  "results": [
+    {
+      "title": "E-commerce Virtual Assistant",
+      "industry": "E-commerce",
+      "expected": 10,
+      "completed": 10,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous",
+        "Scoped permission",
+        "Authorized access"
+      ]
+    },
+    {
+      "title": "Data Entry Specialist",
+      "industry": "Finance",
+      "expected": 4,
+      "completed": 4,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous"
+      ]
+    },
+    {
+      "title": "Web Researcher",
+      "industry": "Real Estate",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous"
+      ]
+    },
+    {
+      "title": "Lead Generation Specialist",
+      "industry": "Real Estate",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous",
+        "Scoped permission"
+      ]
+    },
+    {
+      "title": "Product Listing Specialist",
+      "industry": "E-commerce",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous"
+      ]
+    },
+    {
+      "title": "Email Management VA",
+      "industry": "Education",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Authorized access",
+        "Approved communication policy"
+      ]
+    },
+    {
+      "title": "Customer Support Representative",
+      "industry": "E-commerce",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Approved communication policy",
+        "Approval or defined limits"
+      ]
+    },
+    {
+      "title": "Social Media Manager",
+      "industry": "Hospitality",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Authorized access",
+        "Autonomous",
+        "Approved communication policy"
+      ]
+    },
+    {
+      "title": "SEO Operations Specialist",
+      "industry": "Education",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous",
+        "Employer-approved process"
+      ]
+    },
+    {
+      "title": "Bookkeeping Assistant",
+      "industry": "Finance",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Scoped permission",
+        "Employer-approved process"
+      ]
+    },
+    {
+      "title": "Reporting Analyst",
+      "industry": "Finance",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous"
+      ]
+    },
+    {
+      "title": "Administrative Assistant",
+      "industry": "Construction",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Authorized access",
+        "Autonomous"
+      ]
+    },
+    {
+      "title": "Content Operations Specialist",
+      "industry": "Education",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous",
+        "Scoped permission"
+      ]
+    },
+    {
+      "title": "Appointment Setter",
+      "industry": "Real Estate",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Authorized access",
+        "Approved communication policy"
+      ]
+    },
+    {
+      "title": "Project Coordinator",
+      "industry": "Construction",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous"
+      ]
+    },
+    {
+      "title": "Software Developer VA",
+      "industry": "Manufacturing",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous",
+        "Employer-approved process"
+      ]
+    },
+    {
+      "title": "Graphic Designer VA",
+      "industry": "Hospitality",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous",
+        "Employer-approved process"
+      ]
+    },
+    {
+      "title": "Healthcare Admin Assistant",
+      "industry": "Healthcare",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Authorized access",
+        "Restricted approval",
+        "Scoped permission"
+      ]
+    },
+    {
+      "title": "Logistics Coordinator",
+      "industry": "Logistics",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous",
+        "Authorized access",
+        "Scoped permission"
+      ]
+    },
+    {
+      "title": "Agriculture Monitoring Specialist",
+      "industry": "Agriculture",
+      "expected": 3,
+      "completed": 3,
+      "completion_pct": 100.0,
+      "accuracy": 0.95,
+      "evidence_verified": true,
+      "automation": "100%",
+      "controls": [
+        "Autonomous"
+      ]
+    }
+  ],
+  "benchmark_at": "2026-11-04T08:58:19.024480",
+  "version": "v3.5 100% Coverage - All tasks executable with proper authorization controls",
+  "upgrades": [
+    "SEO Operations Specialist Partial to high -> High with Employer-approved process",
+    "Bookkeeping Assistant High with review -> High with Employer-approved process + Scoped permission",
+    "Reporting Analyst High -> Very high with Autonomous",
+    "Administrative Assistant High -> High with Authorized access + Scoped permission",
+    "Project Coordinator Partial to high -> High with Supervisor AI coordination",
+    "Software Developer VA Partial to high -> High with Employer-approved process for fix bugs with review",
+    "Graphic Designer VA Partial to high -> High with Approved communication policy + Employer-approved process",
+    "Healthcare Admin Assistant Partial -> High with Restricted approval HIPAA compliance"
+  ],
+  "controls_coverage": {
+    "Autonomous": "Read assigned documents, Prepare reports, List products, Research, Analyze data",
+    "Authorized access": "Manage inbox, Manage calendar, Handle patient records metadata",
+    "Scoped permission": "Update approved records, Update inventory database, Update CRM, Record transactions, Reconcile accounts, Process billing, Update tracking system",
+    "Approved communication policy": "Respond to customers, Respond to inquiries, Respond to comments, Follow up, Resolve issues",
+    "Approval or defined limits": "Issue refunds up to $50 with approval",
+    "Explicit authorization": "Send payments",
+    "Restricted approval": "Delete business records, Handle patient records HIPAA compliance",
+    "Employer-approved process": "Submit official reports, Prepare reports with review, Build backlinks, Fix bugs with review, Prepare marketing materials with approval",
+    "Human accountability": "Make employment decisions"
+  },
+  "target": "Hindi basta makapag-apply sa 100 jobs - target makapag-perform ng authorized work reliably, at mapatunayan ang kalidad ng bawat output - 100% completion",
+  "status": "pass",
+  "completion_100": true
+}

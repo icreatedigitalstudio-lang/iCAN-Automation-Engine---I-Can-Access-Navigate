@@ -1,0 +1,58 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    ports: ["8000:8000", "8765:8765", "9000:9000", "9001:9001"]
+    env_file: .env
+    volumes: ["./output:/app/output", "./data:/app/data"]
+    depends_on: [redis, postgres]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/live"]
+      interval: 30s
+
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+    volumes: ["redis_data:/data"]
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: pyautoforge
+      POSTGRES_USER: forge
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+    ports: ["5432:5432"]
+    volumes: ["pg_data:/var/lib/postgresql/data"]
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports: ["9090:9090"]
+    volumes: ["./observability/prometheus.yml:/etc/prometheus/prometheus.yml"]
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: icreate-ollama-brain
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_KEEP_ALIVE=10m
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    # For CPU only, remove deploy section
+    # Pull models on start: docker exec icreate-ollama-brain ollama pull qwen2.5-coder:7b && ollama pull llava:7b
+
+  grafana:
+    image: grafana/grafana:latest
+    ports: ["3000:3000"]
+    environment: {GF_SECURITY_ADMIN_PASSWORD: admin}
+
+volumes: {redis_data: {}, pg_data: {}}

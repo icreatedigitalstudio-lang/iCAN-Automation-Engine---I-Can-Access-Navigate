@@ -1,0 +1,68 @@
+services:
+  engine:
+    image: ghcr.io/icreate-studio/automation-engine:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+      - "8765:8765"
+      - "8766:8766"
+      - "8767:8767"
+      - "8768:8768"
+      - "9001:9001"
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=postgresql://icreate:icreate@postgres:5432/icreate
+      - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      - ./data:/app/data
+      - ./mcp_registry_production.db:/app/mcp_registry_production.db
+      - ./healed_selectors.db:/app/healed_selectors.db
+      - ./brain_memory.db:/app/brain_memory.db
+    depends_on:
+      - redis
+      - postgres
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+    volumes: [redis_data:/data]
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: icreate
+      POSTGRES_PASSWORD: icreate
+      POSTGRES_DB: icreate
+    ports: ["5432:5432"]
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports: ["9090:9090"]
+    volumes: ["./prometheus.yml:/etc/prometheus/prometheus.yml", prometheus_data:/prometheus]
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    ports: ["3000:3000"]
+    environment: [GF_SECURITY_ADMIN_PASSWORD=icreate123]
+    volumes: [grafana_data:/var/lib/grafana]
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    ports: ["11434:11434"]
+    volumes: [ollama_data:/root/.ollama]
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+  postgres_data:
+  prometheus_data:
+  grafana_data:
+  ollama_data:

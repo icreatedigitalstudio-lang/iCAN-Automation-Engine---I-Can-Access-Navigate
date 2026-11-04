@@ -1,0 +1,57 @@
+
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: icreate-nightly-heal
+  namespace: default
+spec:
+  schedule: "0 2 * * *"  # 2 AM daily PH time - adjust to 18 UTC = 2 AM PH
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: autotrain
+            image: icreate-automation-engine:latest
+            imagePullPolicy: IfNotPresent
+            command: ["python", "-m", "pyautoforge.self_healing.auto_train"]
+            env:
+            - name: HEALED_DB_PATH
+              value: "/app/data/healed_selectors.db"
+            - name: GITHUB_REPO
+              value: "icreate-studio/automation-engine"
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: github-token
+                  key: token
+            - name: AUTO_PUSH
+              value: "true"
+            - name: AUTO_REDEPLOY
+              value: "true"
+            - name: K8S_DEPLOYMENT
+              value: "icreate-automation-engine"
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: openai-key
+                  key: api_key
+            volumeMounts:
+            - name: data-volume
+              mountPath: /app/data
+          volumes:
+          - name: data-volume
+            persistentVolumeClaim:
+              claimName: icreate-data-pvc
+          restartPolicy: OnFailure
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: healed-selectors
+  namespace: default
+data:
+  healed_selectors_export.json: |
+    {"generated_at": "2025-01-01", "total_healed": 0, "domains": [], "selectors": {}}
