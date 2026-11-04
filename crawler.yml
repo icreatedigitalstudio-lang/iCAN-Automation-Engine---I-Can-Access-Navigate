@@ -1,0 +1,11 @@
+name: Crawler 27,800+
+on:
+  schedule:
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo 'Crawler 27,800+ Official 2993 Glama 96262'
